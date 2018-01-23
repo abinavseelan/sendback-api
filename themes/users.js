@@ -1,12 +1,27 @@
-module.exports = [
-  {
-    id: '1',
-    username: 'thanks',
-    name: 'Tom Hanks',
+module.exports = {
+  schema: {
+    id: {
+      type: 'string',
+      required: true,
+    },
+    username: {
+      type: 'string',
+      required: true,
+    },
+    name: {
+      type: 'string',
+    },
   },
-  {
-    id: '2',
-    username: 'aketchum',
-    name: 'Ash Ketchum',
-  },
-];
+  data: [
+    {
+      id: '1',
+      username: 'thanks',
+      name: 'Tom Hanks',
+    },
+    {
+      id: '2',
+      username: 'aketchum',
+      name: 'Ash Ketchum',
+    },
+  ],
+};

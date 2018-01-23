@@ -8,7 +8,7 @@ exports.getObjects = (request, response) => {
     return response.sendStatus(400);
   }
 
-  const objects = themes[theme].filter((object, index) => {
+  const objects = themes[theme].data.filter((object, index) => {
     if (index >= (perPage * (page - 1)) && index < (perPage * page)) {
       return true;
     }
@@ -26,7 +26,7 @@ exports.getSingleObject = (request, response) => {
     return response.sendStatus(400);
   }
 
-  const object = themes[theme].find((obj) => {
+  const object = themes[theme].data.find((obj) => {
     if (obj.id === id) {
       return true;
     }
@@ -39,4 +39,8 @@ exports.getSingleObject = (request, response) => {
   }
 
   response.status(200).json(object);
+};
+
+exports.createObject = (request, response) => {
+  response.status(201).json(request.body);
 };

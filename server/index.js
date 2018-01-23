@@ -12,6 +12,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/api', routes.maintenance);
 app.use('/api', routes.theme);
+app.use('/status-code', routes.code);
 
 app.listen(port, () => {
   console.log(`Running on port ${port}`); // eslint-disable-line
