@@ -20,6 +20,7 @@
   "scripts": {
     "start:dev": "NODE_ENV=development PORT=1337 ./node_modules/.bin/nodemon server/index.js",
     "lint": "echo 'Running linter' && eslint . --fix",
+    "lint:ci": "eslint .",
     "test": "NODE_ENV=test ./node_modules/.bin/jest --forceExit"
   },
   "pre-commit": [

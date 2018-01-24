@@ -1,0 +1,11 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/tmp
+    docker:
+      - image: circle/node:9.4
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm run lint:ci
+      - run: npm run test
