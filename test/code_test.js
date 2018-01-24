@@ -1,61 +1,18 @@
-// eslint-global describe
-
-const chai = require('chai');
-const { expect } = require('chai');
-const http = require('chai-http');
-
+const request = require('supertest');
 const app = require('../server/index');
 
-chai.use(http);
-
-const testSuccess = (code) => {
-  it(`should return ${code}`, (done) => {
-    chai.request(app).get(`/status-code/${code}`)
-      .then((response) => {
-        try {
-          expect(response).to.have.status(code);
-          done();
-        } catch (err) {
-          if (err.name === 'AssertionError') {
-            done(err);
-          } else {
-            done();
-          }
-        }
-      });
+const testStatusCode = (code) => {
+  it(`should return ${code}`, async () => {
+    const response = await request(app).get(`/status-code/${code}`);
+    expect(response.statusCode).toBe(code);
   });
 };
 
-const testSuccessInFailure = (code) => {
-  it(`should return ${code}`, (done) => {
-    chai.request(app).get(`/status-code/${code}`)
-      .then(() => {
-        // no-op
-      })
-      .catch((response) => {
-        try {
-          expect(response).to.have.status(code);
-          done();
-        } catch (err) {
-          if (err.name === 'AssertionError') {
-            done(err);
-          } else {
-            done();
-          }
-        }
-      });
-  });
-};
-
-describe('Status Code Endpoints (2xx) /status-code/2xx', function testSuite() {
-  this.timeout(5000);
-
-  [200, 201, 202, 203, 204, 205, 206, 207, 208, 226].forEach(testSuccess);
+describe('Status Code Endpoints (2xx) /status-code/2xx', () => {
+  [200, 201, 202, 203, 204, 205, 206, 207, 208, 226].forEach(testStatusCode);
 });
 
-describe('Status Code Endpoints (4xx) /status-code/4xx', function testSuite() {
-  this.timeout(5000);
-
+describe('Status Code Endpoints (4xx) /status-code/4xx', () => {
   [
     400,
     401,
@@ -85,12 +42,10 @@ describe('Status Code Endpoints (4xx) /status-code/4xx', function testSuite() {
     429,
     431,
     451,
-  ].forEach(testSuccessInFailure);
+  ].forEach(testStatusCode);
 });
 
-describe('Status Code Endpoints (5xx) /status-code/4xx', function testSuite() {
-  this.timeout(5000);
-
+describe('Status Code Endpoints (5xx) /status-code/4xx', () => {
   [
     500,
     501,
@@ -103,5 +58,5 @@ describe('Status Code Endpoints (5xx) /status-code/4xx', function testSuite() {
     508,
     510,
     511,
-  ].forEach(testSuccessInFailure);
+  ].forEach(testStatusCode);
 });
