@@ -44,3 +44,47 @@ exports.getSingleObject = (request, response) => {
 exports.createObject = (request, response) => {
   response.status(201).json(request.body);
 };
+
+exports.updateObject = (request, response) => {
+  const { theme, id } = request.params;
+
+  if (!theme || !id) {
+    return response.sendStatus(400);
+  }
+
+  const object = themes[theme].data.find((obj) => {
+    if (obj.id === id) {
+      return true;
+    }
+
+    return false;
+  });
+
+  if (!object) {
+    return response.sendStatus(404);
+  }
+
+  response.status(200).json(Object.assign({}, object, request.body));
+};
+
+exports.removeObject = (request, response) => {
+  const { theme, id } = request.params;
+
+  if (!theme || !id) {
+    return response.sendStatus(400);
+  }
+
+  const object = themes[theme].data.find((obj) => {
+    if (obj.id === id) {
+      return true;
+    }
+
+    return false;
+  });
+
+  if (!object) {
+    return response.sendStatus(404);
+  }
+
+  response.sendStatus(204);
+};

@@ -10,21 +10,21 @@ module.exports = (request, response, next) => {
   const { schema } = themes[theme];
   const schemaKeys = Object.keys(schema);
 
-  let fail = false;
+  const fail = {};
 
   schemaKeys.forEach((key) => {
     if (schema[key].required && !(key in request.body)) {
-      fail = true;
+      fail[key] = 'This is a required field';
     }
 
     const type = typeof request.body[key];
-    if (type !== schema[key].type) {
-      fail = true;
+    if (type !== 'undefined' && type !== schema[key].type) {
+      fail[key] = `Expected ${schema[key].type}`;
     }
   });
 
-  if (fail) {
-    return response.sendStatus(400);
+  if (Object.keys(fail).length) {
+    return response.status(400).send(fail);
   }
 
   next();
