@@ -87,3 +87,60 @@ describe('POST :theme', () => {
     });
   });
 });
+
+describe('PUT :theme', () => {
+  it('should update a user', async () => {
+    const obj = {
+      id: '3',
+      username: 'test',
+    };
+
+    const response = await request(app).put('/api/users/1').send(obj);
+
+    expect(response.statusCode).toBe(200);
+    expect(response.body).toEqual({
+      id: '3',
+      username: 'test',
+      name: 'Tom Hanks',
+    });
+  });
+
+  it('should return 404 if the user does not exist', async () => {
+    const obj = {
+      id: '3',
+      username: 'test',
+    };
+
+    const response = await request(app).put('/api/users/100').send(obj);
+
+    expect(response.statusCode).toBe(404);
+  });
+
+  it('should fail type validation', async () => {
+    const obj = {
+      id: 3,
+      username: 'test',
+    };
+
+    const response = await request(app).put('/api/users/1').send(obj);
+
+    expect(response.statusCode).toBe(400);
+    expect(response.body).toEqual({
+      id: 'Expected string',
+    });
+  });
+});
+
+describe('DELETE :theme', () => {
+  it('should delete a user', async () => {
+    const response = await request(app).delete('/api/users/1');
+
+    expect(response.statusCode).toBe(204);
+  });
+
+  it('should return 404 if user does not exist', async () => {
+    const response = await request(app).delete('/api/users/100');
+
+    expect(response.statusCode).toBe(404);
+  });
+});
