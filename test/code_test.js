@@ -1,5 +1,5 @@
 const request = require('supertest');
-const app = require('../server/index');
+const app = require('../server');
 
 const testStatusCode = (code) => {
   it(`should return ${code}`, async () => {

@@ -17,8 +17,10 @@ app.use('/api', routes.maintenance);
 app.use('/api', routes.theme);
 app.use('/status-code', routes.code);
 
-app.listen(port, () => {
-  console.log(`Running on port ${port}`); // eslint-disable-line
-});
+if (process.env.NODE_ENV !== 'test') {
+  app.listen(port, () => {
+    console.log(`Running on port ${port}`); // eslint-disable-line
+  });
+}
 
 module.exports = app;
