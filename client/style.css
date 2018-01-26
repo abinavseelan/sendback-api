@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'ProximaNovaBold';
-  src: url('./fonts/ProximaNovaSemiBold.ttf');
+  src: url('./fonts/ProximaNovaBold.ttf');
 }
 
 @font-face {
   font-family: 'ProximaNova';
-  src: url('./fonts/ProximaNovaThin.ttf');
+  src: url('./fonts/ProximaNovaRegular.ttf');
 }
 
 * {
@@ -23,9 +23,10 @@ header {
   height: 10vh;
 }
 
-p, .link {
+p, .link, label {
   font-size: 19px;
   line-height: 29px;
+  color: #32325dc5;
 }
 
 h1 {
@@ -83,13 +84,18 @@ h2 {
   flex-wrap: wrap;
 }
 
-.cta-section {
-  background: #323a5a linear-gradient(192deg,#51557d,#222d49);
-  padding: 0 160px;
-  padding-top: 250px;
-  padding-bottom: 50px;
+.container {
+  max-width: 960px;
   display: flex;
   flex-wrap: wrap;
+
+  margin: 0 auto;
+}
+
+.cta-section {
+  background: #323a5a linear-gradient(192deg,#51557d,#222d49);
+  padding-top: 250px;
+  padding-bottom: 50px;
 }
 
 .cta-section .left {
@@ -102,33 +108,66 @@ h2 {
   flex-direction: column;
 
   padding-top: 30px;
+  padding-left: 0;
 }
 
-.cta-section .tab {
-  width: 80%;
+
+.cta-section .right {
+  flex: 3;
+  padding-right: 0;
+}
+
+
+.cta-section label {
+  width: 100%;
   transition: all 0.15s ease-out;
-  text-align: left;
-  padding-left: 60px;
   border-radius: 6px;
   cursor: pointer;
+  display: inline-block;
+  padding: 20px;
 }
 
-.cta-section .tab:hover {
+.cta-section .tab:hover label,
+.cta-section [type='radio']:checked + label  {
   background-color: rgba(255, 255, 255, 0.1);
   box-shadow: 0 5px 15px rgba(0,0,0,.1), 0 15px 35px rgba(0,0,0,.1), 0 50px 100px rgba(50,50,93,.1);
 }
 
-.cta-section .tab p {
+.cta-section label {
   font-family: 'ProximaNovaBold';
   color: rgba(255, 255, 255, 0.7);
 }
 
-.cta-section .tab:hover p {
+.cta-section label:hover,
+.cta-section [type='radio']:checked + label  {
   color: rgba(255, 255, 255, 1);
 }
 
-.cta-section .right {
-  flex: 3;
+.cta-section label:focus,
+.cta-section label:active,
+.cta-section [type='radio']:focus,
+.cta-section [type='radio']:active {
+  outline: none;
+  border: none;
+}
+
+.cta-section .tab {
+  position: relative;
+  text-align: left;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.cta-section [type='radio'] {
+  appearance: none;
+  -webkit-appearance: none;
+  z-index: 2;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
 }
 
 .cta-section .card {

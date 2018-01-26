@@ -16,7 +16,7 @@
       Prototype your API requests
     </h1>
   </div>
-  <div class="hero-card card">
+  <div class="hero-card card container">
     <div class="left">
       <div class="intro">
         <h2>
@@ -51,44 +51,35 @@
   </div>
   <div class="hero-container"></div>
   <div class="cta-section">
-    <div class="left">
-      <div class="tab">
-        <p>
-          Success response codes (2xx)
-        </p>
-      </div>
-      <div class="tab">
-        <p>
-          Redirect response codes (3xx)
-        </p>
-      </div>
-      <div class="tab">
-        <p>
-          Client error response codes (4xx)
-        </p>
-      </div>
-      <div class="tab">
-        <p>
-          Server error response codes (5xx)
-        </p>
-      </div>
+    <div class="container">
+      <div class="left">
+        <div class="tab">
+          <input type="radio" name="example-codes" value="2xx" id="code-2xx" checked />
+          <label for="code-2xx"> Success response codes (2xx) </label>
+        </div>
+        <div class="tab">
+          <input type="radio" name="example-codes" value="3xx" id="code-3xx" />
+          <label for="code-3xx"> Redirect response codes (3xx) </label>
+        </div>
+        <div class="tab">
+          <input type="radio" name="example-codes" value="4xx" id="code-4xx" />
+          <label for="code-4xx"> Client error response codes (4xx) </label>
+        </div>
+        <div class="tab">
+          <input type="radio" name="example-codes" value="5xx" id="code-5xx" />
+          <label for="code-5xx"> Server error response codes (5xx) </label>
+        </div>
 
-    </div>
-    <div class="right">
-      <div class="card">
-        <h2>
-          Success response codes (2xx)
-        </h2>
-        <div id="code-snippet">
-          const request = require('axios');
-
-          request.get('http://127.0.0.0:1337/status-code/2xx') // Replace 'xx' with any number you require
-            .then((response) => {
-              console.log(response);
-            })
-            .catch((err) => {
-              console.log(err);
-            });
+      </div>
+      <div class="right">
+        <div class="card">
+          <h2>
+            Success response codes (2xx)
+          </h2>
+          <div id="code-snippet">
+            const request = require('axios'); request.get('http://127.0.0.0:1337/status-code/2xx') // Replace 'xx' with any number you
+            require .then((response) => { console.log(response); }) .catch((err) => { console.log(err); });
+          </div>
         </div>
       </div>
     </div>
