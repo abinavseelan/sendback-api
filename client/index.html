@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>crudTest | Mock API responses</title>
+  <link href="./style.css" rel="stylesheet" />
+</head>
+<body>
+  <header>
+
+  </header>
+  <div class="header">
+    <h1>
+      Prototype your API requests
+    </h1>
+  </div>
+  <div class="hero-card card">
+    <div class="left">
+      <div class="intro">
+        <h2>
+          Mock HTTP Status codes 🦄
+        </h2>
+        <p>
+          Simulating different HTTP response codes is hard. crudTest mocks status codes for you, so you can build your applications faster! ⚡️
+        </p>
+        <p>
+          Send a request (GET, POST, PUT or DELETE) to our mocked APIs to receive the status code that you need.
+        </p>
+      </div>
+      <div class="try">
+        <h3>
+          Give it a try!
+        </h3>
+        <p>
+          Send a GET, POST, PUT or DELETE request to this url and you'll always get a 418 response code.
+        </p>
+        <div class="link-container">
+          <a class="link">
+            http://localhost:1337/status-code/418
+          </a>
+          <span class="copy-cta">
+            Click to copy
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="right">
+    </div>
+  </div>
+  <div class="hero-container"></div>
+  <div class="cta-section">
+    <div class="left">
+      <div class="tab">
+        <p>
+          Success response codes (2xx)
+        </p>
+      </div>
+      <div class="tab">
+        <p>
+          Redirect response codes (3xx)
+        </p>
+      </div>
+      <div class="tab">
+        <p>
+          Client error response codes (4xx)
+        </p>
+      </div>
+      <div class="tab">
+        <p>
+          Server error response codes (5xx)
+        </p>
+      </div>
+
+    </div>
+    <div class="right">
+      <div class="card">
+        <h2>
+          Success response codes (2xx)
+        </h2>
+        <div id="code-snippet">
+          const request = require('axios');
+
+          request.get('http://127.0.0.0:1337/status-code/2xx') // Replace 'xx' with any number you require
+            .then((response) => {
+              console.log(response);
+            })
+            .catch((err) => {
+              console.log(err);
+            });
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://embed.runkit.com" data-element-id="code-snippet"></script>
+</body>
+</html>
