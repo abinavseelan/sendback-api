@@ -107,16 +107,18 @@ h2 {
   color: white;
   flex-direction: column;
 
-  padding-top: 30px;
   padding-left: 0;
 }
 
 
 .cta-section .right {
-  flex: 3;
+  flex: 5;
   padding-right: 0;
 }
 
+#code-snippet {
+  margin-top: 60px;
+}
 
 .cta-section label {
   width: 100%;

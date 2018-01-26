@@ -7,5 +7,6 @@ module.exports = {
     "describe": true,
     "it": true,
     "expect": true,
+    "document": true,
   }
 };
