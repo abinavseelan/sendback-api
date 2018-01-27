@@ -1,0 +1,44 @@
+@font-face {
+  font-family: 'ProximaNovaBold';
+  src: url('./fonts/ProximaNovaBold.ttf');
+}
+
+@font-face {
+  font-family: 'ProximaNova';
+  src: url('./fonts/ProximaNovaRegular.ttf');
+}
+
+html, body {
+  font-family: 'ProximaNova', Arial, Helvetica, sans-serif;
+}
+
+body,
+p,
+.link,
+label {
+  font-size: 19px;
+  line-height: 29px;
+  color: $text;
+}
+
+@for $i from 1 through 6 {
+  h#{i} .h#{i} {
+    color: $text-dark;
+  }
+}
+
+h1 {
+  font-size: 50px;
+}
+
+h3 {
+  font-family: 'ProximaNovaBold';
+  font-size: 21px;
+  margin-top: 0px;
+}
+
+h2 {
+  font-family: 'ProximaNovaBold';
+  font-size: 30px;
+  margin-top: 0px;
+}

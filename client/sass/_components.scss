@@ -1,0 +1,55 @@
+.btn-primary, .btn-secondary, .btn-cta {
+  padding: 10px 20px;
+  color: white;
+  border-radius: 4px;
+  display: inline-block;
+  text-shadow: 0 1px 3px rgba(36,180,126,.4);
+  box-shadow: 0 4px 6px rgba(50,50,93,.11);
+  transition: all 0.15s;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  margin: 20px 0 ;
+  width: 100%;
+
+  &:hover {
+    transition: all 0.15s;
+    transform: translateY(-1px);
+    box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+  }
+
+  color: white;
+  text-decoration: none;
+  font-family: 'ProximaNovaBold';
+  font-size: 14px;
+  line-height: 29px;
+
+  &:visited {
+    color: white;
+  }
+}
+
+.btn-primary {
+  background-color: #6772e5;
+
+  &:hover {
+    background-color: #7795f8;
+  }
+}
+
+.btn-secondary {
+  background-color: #3ecf8e;
+
+  &:hover {
+    background-color: #47e9a0;
+  }
+}
+
+.btn-cta {
+  margin-top: 80px;
+  background-color: #fda085;
+
+  &:hover {
+    background-color: #f6d365;
+  }
+}
