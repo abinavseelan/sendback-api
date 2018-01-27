@@ -26,10 +26,10 @@ workflows:
   version: 2
   build-and-deploy:
     jobs:
-      - build
+      - install
       - test:
           requires:
-            - build
+            - install
       - build-image:
           requires:
             - test
