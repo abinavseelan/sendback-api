@@ -1,9 +1,9 @@
 .tagline {
-  margin-bottom: 20px;
-}
-
-.tagline-section {
   padding: 150px 0;
+
+  h1 {
+    margin-bottom: 20px;
+  }
 }
 
 .card {
@@ -13,11 +13,7 @@
   padding: 40px;
 }
 
-.no-collapse-pad {
-  padding: 1px 0;
-}
-
-.hero-section {
+.hero {
   position: relative;
 
   h2 {
@@ -30,7 +26,9 @@
   }
 }
 
-
+.snippets {
+  padding-top: 200px;
+}
 
 
 

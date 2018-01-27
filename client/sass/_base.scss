@@ -29,14 +29,33 @@ hr {
 }
 
 .background-night {
-  background: $midnight linear-gradient(180deg, $night, #midnight);
+  background: $midnight linear-gradient(180deg, $night, $midnight);
 }
 
 .t-center {
   text-align: center;
 }
 
+.t-bg-dark {
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.35);
+  &, & a {
+    color: white;
+  }
+
+  a:hover {
+    color: darken(#FFF,5%);
+  }
+}
+
 .center-block {
   display: inline-block;
   margin: 0 auto;
+}
+
+.no-collapse-pad {
+  padding: 1px 0;
+}
+
+ul {
+  list-style: none;
 }

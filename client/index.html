@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,45 +17,64 @@
   </script>
   <link href="./style.css" rel="stylesheet" />
 </head>
+
 <body>
-  <section class="background-gray t-center tagline-section">
-    <h1 class="tagline">Prototype your API requests</h1>
-  </section>
-  <section class="background-sunset no-collapse-pad hero-section">
-    <div class="container">
-      <div class="card overshoot">
-        <h2>Mock HTTP Status Codes</h2>
-        <p>Simulating different HTTP response codes is hard. crudTest mocks status codes for you, so you can build your applications faster! ⚡️</p>
-        <p>Send a request (GET, POST, PUT or DELETE) to our mocked APIs to receive the status code that you need.</p>
-        <h3 class="h3">Give it a try!</h3>
-        <p>Send a GET, POST, PUT or DELETE request to this url and you'll always get a 418 response code.</p>
-        <p>
-            <a
-              class="copyable-link"
-              data-clipboard-text="http://localhost:1337/status-code/418">
+  <header class="background-gray t-center tagline">
+    <h1>Prototype your API requests</h1>
+  </header>
+  <main>
+    <section class="background-sunset no-collapse-pad hero">
+      <div class="container">
+        <div class="card overshoot">
+          <h2>Mock HTTP Status Codes</h2>
+          <p>Simulating different HTTP response codes is hard. crudTest mocks status codes for you, so you can build your applications
+            faster! ⚡️</p>
+          <p>Send a request (GET, POST, PUT or DELETE) to our mocked APIs to receive the status code that you need.</p>
+          <h3 class="h3">Give it a try!</h3>
+          <p>Send a GET, POST, PUT or DELETE request to this url and you'll always get a 418 response code.</p>
+          <p>
+            <a class="copyable-link" data-clipboard-text="http://localhost:1337/status-code/418">
               http://localhost:1337/status-code/418
             </a>
-        </p>
+          </p>
+        </div>
       </div>
+    </section>
+    <section class="background-dusk t-bg-dark no-collapse-pad snippets">
+      <div class="container">
+        <ul class="radio-tabs">
+          <li>
+            <input type="radio" name="code-snippet" id="code-2xx" checked />
+            <label for="code-2xx">Success Codes 2xx</label>
+          </li>
+          <li>
+            <input type="radio" name="code-snippet" id="code-3xx" />
+            <label for="code-3xx">Success Codes 3xx</label>
+          </li>
+          <li>
+            <input type="radio" name="code-snippet" id="code-4xx" />
+            <label for="code-4xx">Success Codes 4xx</label>
+          </li>
+          <li>
+            <input type="radio" name="code-snippet" id="code-5xx" />
+            <label for="code-5xx">Success Codes 5xx</label>
+          </li>
+        </ul>
+      </div>
+      <div>
+
+      </div>
+    </section>
+  </main>
+  <footer class="background-night t-bg-dark no-collapse-pad">
+    <div class="container">
+      🛠 by CampVanilla
+      <p>Authors:
+        <a href="https://abinavseelan.com" title="Abinav Nithya Seelan">@abinavseelan</a> &amp;
+        <a href="http://aditimohanty.com" title="Aditi Anomita Mohanty">@rheaditi</a>
+      </p>
     </div>
-  </section>
-  <section class="background-dusk">
-    Some shit here
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br /><br />
-    <br />
-    <br />
-    <br /><br />
-    <br />
-    <br />
-    <br />
-  </section>
+  </footer>
   <!-- <header>
 
   </header>
@@ -159,4 +179,5 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
   <script src="./index.js"></script>
 </body>
+
 </html>
