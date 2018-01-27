@@ -341,3 +341,15 @@ hr {
     font-style: italic;
   }
 }
+
+@media(max-width: 768px) {
+  .documentation-container {
+    width: 90%;
+    padding-left: 20px;
+
+    .code-snippet {
+      max-width: 600px;
+      margin-left: 10px;
+    }
+  }
+}
