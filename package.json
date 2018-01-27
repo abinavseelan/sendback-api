@@ -7,24 +7,32 @@
     "body-parser": "^1.18.2",
     "eslint": "^4.16.0",
     "express": "^4.16.2",
+    "gulp-nodemon": "^2.2.1",
     "morgan": "^1.9.0"
   },
   "devDependencies": {
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.9.2",
+    "gulp-sass": "^3.1.0",
     "jest": "^22.1.4",
     "nodemon": "^1.14.11",
     "pre-commit": "^1.2.2",
     "supertest": "^3.0.0"
   },
   "scripts": {
-    "start:dev": "NODE_ENV=development PORT=1337 ./node_modules/.bin/nodemon server/index.js",
+    "start:dev": "./node_modules/.bin/gulp start",
     "lint": "echo 'Running linter' && eslint . --fix",
     "lint:ci": "eslint .",
-    "test": "NODE_ENV=test ./node_modules/.bin/jest --forceExit"
+    "test": "NODE_ENV=test ./node_modules/.bin/jest --forceExit",
+    "compile:css": "echo 'Compiling CSS' && ./node_modules/.bin/gulp sass",
+    "addCSS": "git add ./client/style.css"
   },
   "pre-commit": [
-    "lint"
+    "lint",
+    "compile:css",
+    "addCSS"
   ],
   "repository": {
     "type": "git",
