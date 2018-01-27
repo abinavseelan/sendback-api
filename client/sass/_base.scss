@@ -9,3 +9,34 @@ hr {
   border: 1px solid #eee;
   width: 100%;
 }
+
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.background-gray {
+  background-color: $background-gray;
+}
+
+.background-sunset {
+  background: $orange linear-gradient(120deg, $yellow 0%, $orange 100%);
+}
+
+.background-dusk {
+  background: $night linear-gradient(180deg, $evening, $night);
+}
+
+.background-night {
+  background: $midnight linear-gradient(180deg, $night, #midnight);
+}
+
+.t-center {
+  text-align: center;
+}
+
+.center-block {
+  display: inline-block;
+  margin: 0 auto;
+}
