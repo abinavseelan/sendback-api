@@ -340,6 +340,11 @@ hr {
   .note {
     font-style: italic;
   }
+
+  footer {
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+  }
 }
 
 @media(max-width: 768px) {
