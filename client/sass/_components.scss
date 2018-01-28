@@ -24,6 +24,18 @@
     margin-top: -100px;
     margin-bottom: -100px;
   }
+
+  .card {
+    display: flex;
+    align-items: center;
+  }
+
+  .col.left {
+    flex: 3;
+  }
+  .col.right {
+    flex: 2;
+  }
 }
 
 .snippets {
