@@ -44,4 +44,4 @@ const changeExample = (range) => {
   }
 };
 
-new Clipboard('.link'); // eslint-disable-line
+new Clipboard('.link-clipboard'); // eslint-disable-line

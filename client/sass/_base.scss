@@ -10,6 +10,16 @@ hr {
   width: 100%;
 }
 
+a {
+  color: $text;
+  text-decoration: none;
+  border-bottom: 1px solid $text;
+
+  .t-bg-dark & {
+    border-bottom-color: #FFF;
+  }
+}
+
 .container {
   width: 95%;
   max-width: 960px;
@@ -55,6 +65,8 @@ hr {
 
 .no-collapse-pad {
   padding: 1px 0;
+  margin-top: -1px;
+  margin-bottom: -1px;
 }
 
 ul {
