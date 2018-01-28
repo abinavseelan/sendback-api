@@ -1,5 +1,5 @@
 .tagline {
-  padding: 150px 0;
+  padding: 50px 0 150px 0;
 
   h1 {
     margin-bottom: 20px;
@@ -28,19 +28,39 @@
   .card {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
   }
 
   .col.left {
-    flex: 3;
+    flex: 1;
+    padding: 30px;
   }
 
   .col.right {
-    flex: 2;
+    flex: 1;
+
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  @media screen and (min-width: 768px) {
+    .col.left {
+      flex: 3;
+    }
+
+    .col.right {
+      flex: 2;
+    }
+
+    .card {
+      flex-wrap: nowrap;
+    }
   }
 }
 
 .radio-tabs {
-  padding-right: 10px;
+  padding-right: 40px;
+
   [type="radio"], label {
     display: inline-block;
   }
@@ -58,17 +78,24 @@
 
   label {
     cursor: pointer;
-    padding: 10px;
+    padding: 20px;
     width: 100%;
     border-radius: 5px;
+    transition: all 0.15s ease-out;
 
     &:hover {
-      color: darken(#FFF, 10%);
+      color: rgba(255, 255, 255, 1);
+      background-color: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 5px 15px rgba(0,0,0,.1), 0 15px 35px rgba(0,0,0,.1), 0 50px 100px rgba(50,50,93,.1);
+      font-family: 'ProximaNovaBold';
     }
   }
 
   [type="radio"]:checked + label {
-    background-color: rgba(255, 255, 255, 0.137);
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,.1), 0 15px 35px rgba(0,0,0,.1), 0 50px 100px rgba(50,50,93,.1);
+    font-family: 'ProximaNovaBold';
   }
 }
 
@@ -77,7 +104,15 @@
   padding-bottom: 150px;
 
   .select-tabs {
-
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,.1), 0 15px 35px rgba(0,0,0,.1), 0 50px 100px rgba(50,50,93,.1);
+    font-family: 'ProximaNovaBold';
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    padding: 20px;
+    margin-bottom: 10px;
   }
 
   .radio-tabs {
@@ -102,6 +137,10 @@
     .tab-content {
       flex: 3;
     }
+
+    .select-tabs {
+      display: none;
+    }
   }
 
   .tab-content {
@@ -111,63 +150,59 @@
   }
 }
 
+.btn {
+  padding: 10px 20px;
+  color: white;
+  border-radius: 6px;
+  text-shadow: 0 1px 3px rgba(36,180,126,.4);
+  box-shadow: 0 4px 6px rgba(50,50,93,.11);
+  transition: all 0.15s;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  margin: 20px 0 ;
+  width: 100%;
+  font-family: 'ProximaNovaBold';
+  font-size: 14px;
+  line-height: 29px;
 
+  &:hover {
+    transition: all 0.15s;
+    transform: translateY(-1px);
+    box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+  }
 
+  &:visited {
+    color: white;
+  }
+}
 
+.primary {
+  background-color: #6772e5;
 
+  &:hover {
+    background-color: #7795f8;
+  }
+}
 
-// .btn-primary, .btn-secondary, .btn-cta {
-//   padding: 10px 20px;
-//   color: white;
-//   border-radius: 4px;
-//   display: inline-block;
-//   text-shadow: 0 1px 3px rgba(36,180,126,.4);
-//   box-shadow: 0 4px 6px rgba(50,50,93,.11);
-//   transition: all 0.15s;
-//   text-transform: uppercase;
-//   text-decoration: none;
-//   text-align: center;
-//   margin: 20px 0 ;
-//   width: 100%;
+.secondary {
+  background-color: #3ecf8e;
 
-//   &:hover {
-//     transition: all 0.15s;
-//     transform: translateY(-1px);
-//     box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
-//   }
+  &:hover {
+    background-color: #47e9a0;
+  }
+}
 
-//   color: white;
-//   text-decoration: none;
-//   font-family: 'ProximaNovaBold';
-//   font-size: 14px;
-//   line-height: 29px;
+.cta {
+  background-color: #fda085;
 
-//   &:visited {
-//     color: white;
-//   }
-// }
+  &:hover {
+    background-color: #f6d365;
+  }
+}
 
-// .btn-primary {
-//   background-color: #6772e5;
-
-//   &:hover {
-//     background-color: #7795f8;
-//   }
-// }
-
-// .btn-secondary {
-//   background-color: #3ecf8e;
-
-//   &:hover {
-//     background-color: #47e9a0;
-//   }
-// }
-
-// .btn-cta {
-//   margin-top: 80px;
-//   background-color: #fda085;
-
-//   &:hover {
-//     background-color: #f6d365;
-//   }
-// }
+.margined-lg {
+  @media screen and (min-width: 786px) {
+      margin-top: 80px;
+  }
+}
