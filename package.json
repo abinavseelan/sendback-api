@@ -28,7 +28,7 @@
     "lint": "echo 'Running linter' && eslint . --fix",
     "lint:ci": "eslint .",
     "test": "NODE_ENV=test ./node_modules/.bin/jest --forceExit",
-    "compile:css": "echo 'Compiling CSS' && ./node_modules/.bin/gulp sass",
+    "compile:css": "echo 'Compiling CSS' && ./node_modules/.bin/gulp sass:prod",
     "addCSS": "git add ./client/style.css"
   },
   "pre-commit": [

@@ -27,47 +27,57 @@
       <div class="container">
         <div class="card overshoot">
           <div class="col left">
-              <h2>Mock HTTP Status Codes</h2>
-              <p>Simulating different HTTP response codes is hard. crudTest mocks status codes for you, so you can build your applications
-                faster! ⚡️</p>
-              <p>Send a request (GET, POST, PUT or DELETE) to our mocked APIs to receive the status code that you need.</p>
-              <h3 class="h3">Give it a try!</h3>
-              <p>Send a GET, POST, PUT or DELETE request to this url and you'll always get a 418 response code.</p>
-              <p>
-                <a class="copyable-link" data-clipboard-text="http://localhost:1337/status-code/418">http://localhost:1337/status-code/418</a>
-              </p>
+            <h2>Mock HTTP Status Codes</h2>
+            <p>Simulating different HTTP response codes is hard. crudTest mocks status codes for you, so you can build your
+              applications faster! ⚡️</p>
+            <p>Send a request (GET, POST, PUT or DELETE) to our mocked APIs to receive the status code that you need.</p>
+            <h3 class="h3">Give it a try!</h3>
+            <p>Send a GET, POST, PUT or DELETE request to this url and you'll always get a 418 response code.</p>
+            <p>
+              <a class="copyable-link" data-clipboard-text="http://localhost:1337/status-code/418">http://localhost:1337/status-code/418</a>
+            </p>
           </div>
           <div class="col right">
-              <a href="/docs.html" class="btn primary">Documentation</a>
-              <a href="https://github.com/abinavseelan/crudtest.com/issues" class="btn secondary">Report a bug or request a feature</a>
-              <a href="https://blog.campvanilla.com" class="btn cta">Visit CampVanilla</a>
+            <a href="/docs.html" class="btn primary">Documentation</a>
+            <a href="https://github.com/abinavseelan/crudtest.com/issues" class="btn secondary">Report a bug or request a feature</a>
+            <a href="https://blog.campvanilla.com" class="btn cta">Visit CampVanilla</a>
           </div>
         </div>
       </div>
     </section>
     <section class="background-dusk t-bg-dark no-collapse-pad snippets">
       <div class="container">
-        <ul class="radio-tabs">
-          <li>
-            <input type="radio" name="code-snippet" id="code-2xx" checked />
-            <label for="code-2xx">Success Codes 2xx</label>
-          </li>
-          <li>
-            <input type="radio" name="code-snippet" id="code-3xx" />
-            <label for="code-3xx">Success Codes 3xx</label>
-          </li>
-          <li>
-            <input type="radio" name="code-snippet" id="code-4xx" />
-            <label for="code-4xx">Success Codes 4xx</label>
-          </li>
-          <li>
-            <input type="radio" name="code-snippet" id="code-5xx" />
-            <label for="code-5xx">Success Codes 5xx</label>
-          </li>
-        </ul>
-      </div>
-      <div>
-
+        <div class="snippets-container">
+          <ul class="radio-tabs">
+            <li>
+              <input type="radio" name="code-snippet" id="code-2xx" checked
+                onClick="changeExample('2')" />
+              <label for="code-2xx">Success Codes 2xx</label>
+            </li>
+            <li>
+              <input type="radio" name="code-snippet" id="code-3xx"
+                onClick="changeExample('3')" />
+              <label for="code-3xx">Success Codes 3xx</label>
+            </li>
+            <li>
+              <input type="radio" name="code-snippet" id="code-4xx"
+                onClick="changeExample('4')" />
+              <label for="code-4xx">Success Codes 4xx</label>
+            </li>
+            <li>
+              <input type="radio" name="code-snippet" id="code-5xx"
+                onClick="changeExample('5')" />
+              <label for="code-5xx">Success Codes 5xx</label>
+            </li>
+          </ul>
+          <select class="select-tabs">
+            <option value="2">Success Codes 2xx</option>
+            <option value="3">Redirect Codes 3xx</option>
+            <option value="4">Client Error Codes 4xx</option>
+            <option value="5">Server Error Codes 5xx</option>
+          </select>
+          <div class="tab-content" id="code-snippet"></div>
+        </div>
       </div>
     </section>
   </main>
@@ -80,57 +90,8 @@
       </p>
     </div>
   </footer>
-  <!-- <header>
-
-  </header>
-  <div class="header">
-    <h1>
-      Prototype your API requests
-    </h1>
-  </div>
-  <div class="hero-card card container">
-    <div class="left">
-      <div class="intro">
-        <h2>
-          Mock HTTP Status codes 🦄
-        </h2>
-        <p>
-          Simulating different HTTP response codes is hard. crudTest mocks status codes for you, so you can build your applications faster! ⚡️
-        </p>
-        <p>
-          Send a request (GET, POST, PUT or DELETE) to our mocked APIs to receive the status code that you need.
-        </p>
-      </div>
-      <div class="try">
-        <h3>
-          Give it a try!
-        </h3>
-        <p>
-          Send a GET, POST, PUT or DELETE request to this url and you'll always get a 418 response code.
-        </p>
-        <div class="link-container">
-          <a class="link" data-clipboard-text="http://localhost:1337/status-code/418">
-            http://localhost:1337/status-code/418
-          </a>
-          <span class="copy-cta">
-            Click to copy
-          </span>
-        </div>
-      </div>
-    </div>
-    <div class="right">
-      <a href="/docs.html?utm_source=homepage&utm_medium=referral" class="btn-primary">
-        Documentation
-      </a>
-      <a href="https://github.com/abinavseelan/crudtest.com/issues" class="btn-secondary">
-        Report a bug or request a feature
-      </a>
-      <hr />
-      <a href="https://blog.campvanilla.com" class="btn-cta">
-        Visit CampVanilla
-      </a>
-    </div>
-  </div>
+  <!--
+  \
   <div class="hero-container"></div>
   <div class="cta-section">
     <div class="container">
