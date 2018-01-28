@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,114 +12,91 @@
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'UA-96285546-2');
   </script>
-  <link href="./style.css" rel="stylesheet" />
+  <link href="./style.css" rel="stylesheet" type="text/css" />
 </head>
+
 <body>
-  <header>
-
+  <header class="background-gray t-center tagline">
+    <h1>Prototype your API requests</h1>
   </header>
-  <div class="header">
-    <h1>
-      Prototype your API requests
-    </h1>
-  </div>
-  <div class="hero-card card container">
-    <div class="left">
-      <div class="intro">
-        <h2>
-          Mock HTTP Status codes 🦄
-        </h2>
-        <p>
-          Simulating different HTTP response codes is hard. crudTest mocks status codes for you, so you can build your applications faster! ⚡️
-        </p>
-        <p>
-          Send a request (GET, POST, PUT or DELETE) to our mocked APIs to receive the status code that you need.
-        </p>
-      </div>
-      <div class="try">
-        <h3>
-          Give it a try!
-        </h3>
-        <p>
-          Send a GET, POST, PUT or DELETE request to this url and you'll always get a 418 response code.
-        </p>
-        <div class="link-container">
-          <a class="link" data-clipboard-text="http://localhost:1337/status-code/418">
-            http://localhost:1337/status-code/418
-          </a>
-          <span class="copy-cta">
-            Click to copy
-          </span>
-        </div>
-      </div>
-    </div>
-    <div class="right">
-      <a href="/docs.html?utm_source=homepage&utm_medium=referral" class="btn-primary">
-        Documentation
-      </a>
-      <a href="https://github.com/abinavseelan/crudtest.com/issues" class="btn-secondary">
-        Report a bug or request a feature
-      </a>
-      <hr />
-      <a href="https://blog.campvanilla.com" class="btn-cta">
-        Visit CampVanilla
-      </a>
-    </div>
-  </div>
-  <div class="hero-container"></div>
-  <div class="cta-section">
-    <div class="container">
-      <div class="left">
-        <div class="tab">
-          <input type="radio" name="example-codes" value="2xx" id="code-2xx" checked onClick="changeExample('2')" />
-          <label for="code-2xx"> (2xx) Success</label>
-        </div>
-        <div class="tab">
-          <input type="radio" name="example-codes" value="3xx" id="code-3xx" onClick="changeExample('3')" />
-          <label for="code-3xx"> (3xx) Redirect</label>
-        </div>
-        <div class="tab">
-          <input type="radio" name="example-codes" value="4xx" id="code-4xx" onClick="changeExample('4')" />
-          <label for="code-4xx"> (4xx) Client error</label>
-        </div>
-        <div class="tab">
-          <input type="radio" name="example-codes" value="5xx" id="code-5xx" onClick="changeExample('5')" />
-          <label for="code-5xx"> (5xx) Server error</label>
-        </div>
-
-      </div>
-      <div class="right">
-        <div class="card">
-          <h2 id="code-header">
-            Success response codes (2xx)
-          </h2>
-          <div id="code-snippet">
+  <main>
+    <section class="background-sunset no-collapse-pad hero">
+      <div class="container">
+        <div class="card overshoot">
+          <div class="col left">
+            <h2>Mock HTTP Status Codes 🦄</h2>
+            <p>Simulating different HTTP response codes is hard. crudTest mocks status codes for you, so you can build your
+              applications faster! ⚡️</p>
+            <p>Send a request (GET, POST, PUT or DELETE) to our mocked APIs to receive the status code that you need.</p>
+            <h3 class="h3">Give it a try!</h3>
+            <p>Send a GET, POST, PUT or DELETE request to this url and you'll always get a 418 response code.</p>
+            <p>
+              <a class="link-clipboard" data-clipboard-text="http://localhost:1337/status-code/418">http://localhost:1337/status-code/418</a>
+              <span class="link-help">Click To Copy!</span>
+            </p>
+          </div>
+          <div class="col right">
+            <a href="/docs.html" class="btn indigo">Documentation</a>
+            <a href="https://github.com/abinavseelan/crudtest.com/issues" class="btn bright-green">Report a bug or request a feature</a>
           </div>
         </div>
       </div>
+    </section>
+    <section class="background-dusk t-bg-dark no-collapse-pad snippets">
+      <div class="container">
+        <div class="snippets-container">
+          <ul class="radio-tabs">
+            <li>
+              <input type="radio" name="code-snippet" id="code-2xx" checked
+                onClick="changeExample('2')" />
+              <label for="code-2xx">Success (2xx)</label>
+            </li>
+            <li>
+              <input type="radio" name="code-snippet" id="code-3xx"
+                onClick="changeExample('3')" />
+              <label for="code-3xx">Redirect (3xx)</label>
+            </li>
+            <li>
+              <input type="radio" name="code-snippet" id="code-4xx"
+                onClick="changeExample('4')" />
+              <label for="code-4xx">Client Error (4xx)</label>
+            </li>
+            <li>
+              <input type="radio" name="code-snippet" id="code-5xx"
+                onClick="changeExample('5')" />
+              <label for="code-5xx">Server Error (5xx)</label>
+            </li>
+          </ul>
+          <select class="select-tabs" onchange="changeExample(value)">
+            <option value="2">Success (2xx)</option>
+            <option value="3">Redirect (3xx)</option>
+            <option value="4">Client Error (4xx)</option>
+            <option value="5">Server Error (5xx)</option>
+          </select>
+          <div class="tab-content" id="code-snippet"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="background-night t-bg-dark no-collapse-pad">
+    <div class="container footer">
+      <section class="col t-center">
+          Powered By
+          <p class="h1">
+            <a href="https://blog.campvanilla.com/?utm_source=crudtest&utm_medium=referral" title="Camp Vanilla - Blog about Code & Technology">CampVanilla</a>
+          </p>
+          <p>
+            🐨 <a href="https://abinavseelan.com/?utm_source=crudtest&utm_medium=referral" title="Abinav Seelan | Web Engineer">@abinavseelan</a> &amp;
+            <a href="http://aditimohanty.com/?utm_source=crudtest&utm_medium=referral" title="Aditi Mohanty | Front-End Engineer, Bangalore, India">@rheaditi</a> 🐙
+          </p>
+      </section>
     </div>
-  </div>
-  <div class="about-section">
-    <div class="container">
-      <h3>
-        Powered by
-      </h3>
-      <h2>
-        CampVanilla
-      </h2>
-      <h3>
-        Find us on the interwebs!
-      </h3>
-      <h3>
-        <a href="https://abinavseelan.com?utm_source=crudTest.com&utm_medium=referral">Abinav Seelan</a> & <a href="http://aditimohanty.com?utm_source=crudTest.com&utm_medium=referral">Aditi Mohanty</a>
-      </h3>
-    </div>
-  </div>
+  </footer>
   <script src="https://embed.runkit.com"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
   <script src="./index.js"></script>
 </body>
+
 </html>

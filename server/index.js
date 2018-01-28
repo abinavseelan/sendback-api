@@ -34,7 +34,7 @@ app.use('/status-code', routes.code);
 
 if (process.env.NODE_ENV !== 'test') {
   app.listen(port, () => {
-    console.log(`Running on port ${port}`); // eslint-disable-line
+    console.log(`App up at http://localhost:${port}/`); // eslint-disable-line
   });
 }
 

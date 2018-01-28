@@ -1,0 +1,262 @@
+.tagline {
+  padding: 50px 0 150px 0;
+
+  h1 {
+    margin-bottom: 20px;
+  }
+}
+
+.link-help {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.15s ease-out;
+}
+
+.link-clipboard {
+  cursor: pointer;
+  &:hover + .link-help {
+    display: inline-block;
+    opacity: 1;
+    color: lighten($text, 10%);
+    padding-left: 10px;
+    border: none;
+  }
+}
+
+.card {
+  background-color: white;
+  box-shadow: 0 5px 15px rgba(0,0,0,.1), 0 15px 35px rgba(0,0,0,.1), 0 50px 100px rgba(50,50,93,.1);
+  border-radius: 10px;
+  padding: 40px;
+}
+
+.hero {
+  position: relative;
+
+  h2 {
+    margin-top: 0;
+  }
+
+  .overshoot {
+    margin-top: -100px;
+    margin-bottom: -100px;
+  }
+
+  .card {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .col.left {
+    flex: 1;
+    padding: 30px;
+  }
+
+  .col.right {
+    flex: 1;
+
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  @media screen and (min-width: 768px) {
+    .col.left {
+      flex: 3;
+    }
+
+    .col.right {
+      flex: 2;
+    }
+
+    .card {
+      flex-wrap: nowrap;
+    }
+  }
+}
+
+.radio-tabs {
+  padding-right: 40px;
+
+  [type="radio"], label {
+    display: inline-block;
+  }
+
+  li {
+    display: block;
+    position: relative;
+  }
+
+  [type="radio"] {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+  }
+
+  label {
+    cursor: pointer;
+    padding: 20px;
+    width: 100%;
+    border-radius: 5px;
+    transition: all 0.15s ease-out;
+
+    &:hover {
+      color: rgba(255, 255, 255, 1);
+      background-color: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 5px 15px rgba(0,0,0,.1), 0 15px 35px rgba(0,0,0,.1), 0 50px 100px rgba(50,50,93,.1);
+      font-family: 'ProximaNovaBold';
+    }
+  }
+
+  [type="radio"]:checked + label {
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,.1), 0 15px 35px rgba(0,0,0,.1), 0 50px 100px rgba(50,50,93,.1);
+    font-family: 'ProximaNovaBold';
+  }
+}
+
+.snippets {
+  padding-top: 150px;
+  padding-bottom: 150px;
+
+  .select-tabs {
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,.1), 0 15px 35px rgba(0,0,0,.1), 0 50px 100px rgba(50,50,93,.1);
+    font-family: 'ProximaNovaBold';
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    padding: 20px;
+    margin-bottom: 10px;
+  }
+
+  .radio-tabs {
+    display: none;
+  }
+
+  .tab-content {
+    margin-left: -35px;
+  }
+
+  @media screen and (min-width: 768px) {
+    .snippets-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .radio-tabs {
+      flex: 2;
+      display: initial;
+    }
+
+    .tab-content {
+      flex: 3;
+    }
+
+    .select-tabs {
+      display: none;
+    }
+  }
+
+  .tab-content {
+    padding-left: 50px;
+    padding-top: 15px;
+    overflow: hidden;
+  }
+}
+
+.btn {
+  padding: 10px 20px;
+  color: white;
+  border-radius: 6px;
+  text-shadow: 0 1px 3px rgba(36,180,126,.4);
+  box-shadow: 0 4px 6px rgba(50,50,93,.11);
+  transition: all 0.15s;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  margin: 20px 0 ;
+  width: 100%;
+  font-family: 'ProximaNovaBold';
+  font-size: 14px;
+  line-height: 29px;
+
+  &:hover {
+    transition: all 0.15s;
+    transform: translateY(-1px);
+    box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+  }
+
+  &:visited {
+    color: white;
+  }
+}
+
+.btn.indigo {
+  background-color: $indigo;
+  border-color: $indigo;
+
+  &:hover {
+    background-color: lighten($indigo, 1%);
+    border-color: lighten($indigo, 1%);
+  }
+}
+
+.btn.bright-green {
+  background-color: $bright-green;
+  border-color: $bright-green;
+
+  &:hover {
+    background-color: lighten($bright-green, 1%);
+    border-color: lighten($bright-green, 1%);
+  }
+}
+
+.btn.orange {
+  background-color: $orange;
+  border-color: $orange;
+
+  &:hover {
+    background-color: lighten($orange, 1%);
+    border-color: lighten($orange, 1%);
+  }
+}
+
+.margined-lg {
+  @media screen and (min-width: 786px) {
+      margin-top: 80px;
+  }
+}
+
+.footer {
+  display: flex;
+  margin-top: -1px;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+  flex-direction: column;
+
+  .col {
+    flex: 1;
+  }
+
+  .h1 {
+    margin: 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
+}
+
+.documentation-container {
+  padding-left: 10px;
+  padding-right: 10px;
+
+  .code-snippet {
+    padding-top: 15px;
+    overflow: hidden;
+  }
+}
