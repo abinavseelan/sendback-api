@@ -1,9 +1,5 @@
 version: 2
 
-machine:
-  services:
-    - docker
-
 jobs:
   install:
     working_directory: ~/tmp
@@ -20,12 +16,29 @@ jobs:
       - run: npm install
       - run: npm run lint:ci
       - run: npm run test
-  build-image:
+  build-image-and-push:
     docker:
       - image: circleci/node:9.4
     steps:
       - checkout
-      - run: docker build -t campvanilla/crudtest.com:latest .
+      - setup_remote_docker:   # (2)
+          docker_layer_caching: true # (3)
+      - run:
+          name: Install Docker client
+          command: |
+            set -x
+            VER="17.03.0-ce"
+            curl -L -o /tmp/docker-$VER.tgz https://download.docker.com/linux/static/stable/x86_64/docker-$VER.tgz
+            tar -xz -C /tmp -f /tmp/docker-$VER.tgz
+            chmod +x /tmp/docker/*
+            sudo mv /tmp/docker/* /usr/bin
+      - run:
+          name: Build Image and Deploy to DockerHub
+          command: |
+            docker build -t campvanilla/crudtest.com:latest .
+            docker login -u $DOCKER_USER -p $DOCKER_PASS
+            docker push campvanilla/crudtest.com:latest
+
 
 workflows:
   version: 2
@@ -35,7 +48,7 @@ workflows:
       - test:
           requires:
             - install
-      - build-image:
+      - build-image-and-push:
           requires:
             - test
           filters:
