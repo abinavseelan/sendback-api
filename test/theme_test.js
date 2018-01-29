@@ -3,7 +3,7 @@ const app = require('../server');
 
 describe('GET :theme', () => {
   it('should fetch all users', async () => {
-    const response = await request(app).get('/api/users');
+    const response = await request(app).get('/themes/users');
     expect(response.statusCode).toBe(200);
     expect(response.body).toHaveLength(2);
     expect(response.body[0]).toEqual({
@@ -14,7 +14,7 @@ describe('GET :theme', () => {
   });
 
   it('should fetch a single user with id = 1', async () => {
-    const response = await request(app).get('/api/users/1');
+    const response = await request(app).get('/themes/users/1');
     expect(response.statusCode).toBe(200);
     expect(response.body).toEqual({
       id: '1',
@@ -24,7 +24,7 @@ describe('GET :theme', () => {
   });
 
   it('should send 404 if user does not exist', async () => {
-    const response = await request(app).get('/api/users/100');
+    const response = await request(app).get('/themes/users/100');
     expect(response.statusCode).toBe(404);
   });
 });
@@ -37,7 +37,7 @@ describe('POST :theme', () => {
       username: 'test',
     };
 
-    const response = await request(app).post('/api/users').send(obj);
+    const response = await request(app).post('/themes/users').send(obj);
 
     expect(response.statusCode).toBe(201);
     expect(response.body).toEqual(obj);
@@ -46,7 +46,7 @@ describe('POST :theme', () => {
   it('should fail required validation', async () => {
     const obj = {};
 
-    const response = await request(app).post('/api/users').send(obj);
+    const response = await request(app).post('/themes/users').send(obj);
 
     expect(response.statusCode).toBe(400);
     expect(response.body).toEqual({
@@ -62,7 +62,7 @@ describe('POST :theme', () => {
       username: 'test',
     };
 
-    const response = await request(app).post('/api/users').send(obj);
+    const response = await request(app).post('/themes/users').send(obj);
 
     expect(response.statusCode).toBe(400);
     expect(response.body).toEqual({
@@ -77,7 +77,7 @@ describe('POST :theme', () => {
       name: 23,
     };
 
-    const response = await request(app).post('/api/users').send(obj);
+    const response = await request(app).post('/themes/users').send(obj);
 
     expect(response.statusCode).toBe(400);
     expect(response.body).toEqual({
@@ -95,7 +95,7 @@ describe('PUT :theme', () => {
       username: 'test',
     };
 
-    const response = await request(app).put('/api/users/1').send(obj);
+    const response = await request(app).put('/themes/users/1').send(obj);
 
     expect(response.statusCode).toBe(200);
     expect(response.body).toEqual({
@@ -111,7 +111,7 @@ describe('PUT :theme', () => {
       username: 'test',
     };
 
-    const response = await request(app).put('/api/users/100').send(obj);
+    const response = await request(app).put('/themes/users/100').send(obj);
 
     expect(response.statusCode).toBe(404);
   });
@@ -122,7 +122,7 @@ describe('PUT :theme', () => {
       username: 'test',
     };
 
-    const response = await request(app).put('/api/users/1').send(obj);
+    const response = await request(app).put('/themes/users/1').send(obj);
 
     expect(response.statusCode).toBe(400);
     expect(response.body).toEqual({
@@ -133,13 +133,13 @@ describe('PUT :theme', () => {
 
 describe('DELETE :theme', () => {
   it('should delete a user', async () => {
-    const response = await request(app).delete('/api/users/1');
+    const response = await request(app).delete('/themes/users/1');
 
     expect(response.statusCode).toBe(204);
   });
 
   it('should return 404 if user does not exist', async () => {
-    const response = await request(app).delete('/api/users/100');
+    const response = await request(app).delete('/themes/users/100');
 
     expect(response.statusCode).toBe(404);
   });

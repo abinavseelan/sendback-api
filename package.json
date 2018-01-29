@@ -26,7 +26,8 @@
     "test": "NODE_ENV=test ./node_modules/.bin/jest --forceExit"
   },
   "pre-commit": [
-    "lint"
+    "lint",
+    "test"
   ],
   "repository": {
     "type": "git",
