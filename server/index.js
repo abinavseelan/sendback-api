@@ -1,5 +1,4 @@
 const express = require('express');
-const path = require('path');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const routes = require('./routes');
@@ -21,14 +20,12 @@ if (process.env.NODE_ENV !== 'test') {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use(express.static(path.resolve(__dirname, '..', 'client')));
-
 if (process.env.NODE_ENV === 'production') {
   app.use(utils.analytics);
 }
 
-app.use('/api', routes.maintenance);
-app.use('/api', routes.theme);
+app.use('/', routes.maintenance);
+app.use('/themes', routes.theme);
 app.use('/status-code', routes.code);
 
 
