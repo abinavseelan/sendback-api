@@ -1,5 +1,5 @@
 {
-  "name": "crudtest.com",
+  "name": "sendback-api",
   "version": "0.1.0",
   "description": "Dummy REST api service",
   "main": "server/index.js",
@@ -31,12 +31,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/abinavseelan/crudtest.com.git"
+    "url": "git+https://github.com/abinavseelan/sendback-api.git"
   },
   "author": "Abinav Seelan <abinav.n.seelan@gmail.com>",
   "license": "BSD-2-Clause",
   "bugs": {
-    "url": "https://github.com/abinavseelan/crudtest.com/issues"
+    "url": "https://github.com/abinavseelan/sendback-api/issues"
   },
-  "homepage": "https://github.com/abinavseelan/crudtest.com#readme"
+  "homepage": "https://github.com/abinavseelan/sendback-api#readme"
 }
