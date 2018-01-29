@@ -35,9 +35,9 @@ jobs:
       - run:
           name: Build Image and Deploy to DockerHub
           command: |
-            docker build -t campvanilla/crudtest.com:latest .
+            docker build -t campvanilla/crudtest-api:latest .
             docker login -u $DOCKER_USER -p $DOCKER_PASS
-            docker push campvanilla/crudtest.com:latest
+            docker push campvanilla/crudtest-api:latest
 
 
 workflows:
