@@ -5,6 +5,6 @@ describe('Maintenance Routes', () => {
   it('should respond on /ping', async () => {
     const response = await request(app).get('/ping');
     expect(response.statusCode).toBe(200);
-    expect(response.text).toBe('Pong!');
+    expect(response.text).toBe('Pong!🏓');
   });
 });
