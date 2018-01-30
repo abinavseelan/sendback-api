@@ -44,6 +44,7 @@ jobs:
       - run:
           name: Pull latest docker image
           command: |
+            ssh $SERVER_USER@SERVER_IP docker login -u $DOCKER_USER -p $DOCKER_PASS
             ssh $SERVER_USER@$SERVER_IP docker pull campvanilla/sendback-api:latest || echo 'Failed to pull image'
             ssh $SERVER_USER@$SERVER_IP docker tag campvanilla/sendback-api:latest campvanilla/sendback-api:current || echo 'Failed to tag container'
             ssh $SERVER_USER@$SERVER_IP docker run -d -p 1337:1337 --name sendback-api sendback-api:current
